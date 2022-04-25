@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static',filename='edit_recipe.css') }}" rel='stylesheet'>
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Edit Recipe</h2>
+            <a class="adjust" href="/recipes">Dashboard</a>
+            <a class="adjust" href="/logout">Logout</a>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</hp>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <form class="container" action="/edit/{{recipe.id}}" method="POST">
+        <div class="d-flex">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{recipe.name}}">
+        </div>
+        <div class="d-flex">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description">{{recipe.description}}</textarea>
+        </div>
+        <div class="d-flex">
+            <label for="instructions">Instructions:</label>
+            <textarea name="instructions" id="instructions">{{recipe.instructions}}</textarea>
+        </div>
+        <div class="d-flex">
+            <label for="under_thirty">Under 30 Minutes to prepare?</label>
+            {% if recipe['under_thirty'] == 1 %}
+            <div class="form-check">
+                <input type="radio" name="under_thirty" value="1" id="1">
+                <label for="under_thirty">Yes</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="under_thirty" value="0" id="0">
+                <label for="under_thirty">No</label>
+            </div>
+            {% else %}
+            <div class="form-check">
+                <input type="radio" name="under_thirty" value="1" id="1">
+                <label for="under_thirty">Yes</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="under_thirty" value="0" id="0">
+                <label for="under_thirty">No</label>
+            </div>
+            {% endif %}        
+            <button class="btn btn-primary" type="submit">Update</button>
+        </div>
+    </form>    
+</body>
+</html>

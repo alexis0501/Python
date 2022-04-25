@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+}
+
+.navbar{
+    width: 99.3%;
+    height: 60px;
+    background-color: rgb(160, 161, 161);
+    display: flex;
+    padding: 5px;
+}
+
+.adjust{
+    margin-left: 38%;
+    color: blue;
+}
+
+
+.container{
+    height: 300px;
+    width: 500px;
+    font-size: large;
+    text-align: center;
+    margin: 45px 0% 0% 30%;
+    background-color: rgb(238, 238, 238);
+    padding: 5px;
+}

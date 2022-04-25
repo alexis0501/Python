@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    
+    <div class="main">
+        <form action="/result">
+            <div class="container">
+                <h1 class="adj N"> {{ session ['name']}} </h1>
+                <p class="white adj">Dojo Location: {{ session['location'] }}</p>
+                <p class="white adj">Favorite Language:{{ session ['language'] }}</p>
+                <p class="white adj">Comments: {{ session ['comment'] }}</p>
+                <a class="adj N" href="/">Home</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

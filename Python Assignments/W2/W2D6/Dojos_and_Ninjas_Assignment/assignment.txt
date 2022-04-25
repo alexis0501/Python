@@ -1,0 +1,42 @@
+1) INSERT INTO dojos (id, name, created_at, updated_at)
+   VALUES(1, 'california', NOW(), NOW());
+    -INSERT INTO dojos (id, name, created_at, updated_at)
+   VALUES(1, 'oregon', NOW(), NOW());
+    -INSERT INTO dojos (id, name, created_at, updated_at)
+   VALUES(1, 'nevada', NOW(), NOW());
+
+2)DELETE FROM dojos;
+
+3)INSERT INTO dojos (id, name, created_at, updated_at)
+   VALUES(1, 'california', NOW(), NOW());
+   -INSERT INTO dojos (id, name, created_at, updated_at)
+   VALUES(1, 'oregon', NOW(), NOW());
+   -INSERT INTO dojos (id, name, created_at, updated_at)
+   VALUES(1, 'nevada', NOW(), NOW());
+
+6)INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 1, 'john', 'doe', 20, NOW(), NOW(), 1);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 2, 'rob', 'doe', 20, NOW(), NOW(), 1);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 3, 'Ericka','gale', 25, NOW(), NOW(), 1);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 3, 'Janene','JOsceline', 23, NOW(), NOW(), 2);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 3, 'Aric','Luther', 27, NOW(), NOW(), 2);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 3, 'Caris','Alethea', 25, NOW(), NOW(), 2);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 3, 'Kylee','Jess', 19, NOW(), NOW(), 3);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 3, 'Sam','Dorris', 24, NOW(), NOW(), 3);
+    -INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id)
+    VALUES ( 3, 'Destinee','Maralyn', 24, NOW(), NOW(), 3);
+
+7)SELECT first_name FROM ninjas WHERE dojo_id = 1;
+
+8)SELECT first_name FROM ninjas WHERE dojo_id = 3;
+
+9)SELECT first_name FROM ninjas WHERE id = 9;
+
+

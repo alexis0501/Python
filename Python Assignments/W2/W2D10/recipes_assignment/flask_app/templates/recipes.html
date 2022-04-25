@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='recipes.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div>
+        <div class="navbar">
+            <h1 class="text">Hello, {{user.first_name}}!</h1>
+            <a class="text adjust" href="/recipes/new">Create</a>
+            <a class="text adjust" href="/logout">Logout</a>
+        </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</hp>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="container">
+        <h5>Your Recipe</h5>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Under 30 Minutes?</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for under in recipes %}
+                    <tr>
+                        <td>{{under.name}}</td>
+                        {% if under.under_thirty%}
+                            <td>Yes</td>
+                        {% else %}
+                            <td>No</td>
+                        {% endif %}
+                        <td class="d-flex">
+                            <a href="/recipes/{{under.id}}/{{under.user_id}}">view instructions</a> || 
+                            <a href="/recipes/{{under.id}}/{{under.user_id}}/edit">edit</a> || 
+                            <a href="/delete/{{under.id}}/{{user.id}}">delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
