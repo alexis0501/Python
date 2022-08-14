@@ -1,5 +1,5 @@
 # Python
 
-Python Assignments at Coding Dojo
+Python Assignments 
 
-Currently reorganizing this repo (06-27-22)
+
